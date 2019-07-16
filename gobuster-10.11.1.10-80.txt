@@ -1,3 +1,4 @@
 /. (Status: 200)
 /?? (Status: 200)
 /\ (Status: 200)
+/cfdocs (Status: 301)
