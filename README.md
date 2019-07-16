@@ -16,7 +16,9 @@ Syntax:
 Where each line in wordlist looks like:
 
 10.1.1.1,80
+
 10.11.1.230,80
+
 10.11.1.227,8080
 
 # Added Pass-the-Hash Bruter
