@@ -2,6 +2,8 @@
 
 Arms-Commander has been pulled. Instead, this repo serves as the public repository of custom tools I made to make the exam and labs less ardous.
 
+Arms-Commander will be re-released with these tools. To better pave the path to newcoming students of the Penetration Testing with Kali Linux Course
+
 
 # Added MassGoBuster
 
