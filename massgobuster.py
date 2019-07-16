@@ -32,6 +32,7 @@ def readInputFile(inputFile):
     return
 
 def main():
+    print "MassGoBuster. Automatically run gobuster against a wordlist of host,port.\r\nComing soon: Threading by running 5 gobuster processes at a time."
     if len(sys.argv) < 2:
         print "Usage:\r\npython massgobuster.py <list of hosts and ports separated by commas>"
         exit(0)

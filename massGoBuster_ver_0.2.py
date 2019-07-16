@@ -16,7 +16,7 @@ def threadPacker(thread):
 # Create 5 threads into a list. And then have asyncio run those 5 threads. The threads are joined together, once they are completed, pack 5 more threads and gobuster them.
 def asyncManager(threadList):
     threadList = threadPacker(thread)
-    
+
     return
 
 def bash_fg(cmd):
@@ -50,6 +50,7 @@ def readInputFile(inputFile):
     return
 
 def main():
+    print "MassGoBuster. Automatically run gobuster against a wordlist of host,port.\r\nComing soon: Threading by running 5 gobuster processes at a time."
     if len(sys.argv) < 2:
         print "Usage:\r\npython massgobuster.py <list of hosts and ports separated by commas>\r\nThis REQUIRES Python3 because it uses the asyncio module"
         exit(0)
