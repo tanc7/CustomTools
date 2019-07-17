@@ -2,6 +2,8 @@
 
 Arms-Commander has been pulled. Instead, this repo serves as the public repository of custom tools I made to make the exam and labs less ardous.
 
+Arms-Commander will be re-released with these tools. To better pave the path to newcoming students of the Penetration Testing with Kali Linux Course
+
 
 # Added MassGoBuster
 
@@ -14,7 +16,9 @@ Syntax:
 Where each line in wordlist looks like:
 
 10.1.1.1,80
+
 10.11.1.230,80
+
 10.11.1.227,8080
 
 # Added Pass-the-Hash Bruter
