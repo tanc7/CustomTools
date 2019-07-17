@@ -1,0 +1,5 @@
+/. (Status: 403)
+/?? (Status: 403)
+/manual (Status: 301)
+/usage (Status: 301)
+/webmail (Status: 301)

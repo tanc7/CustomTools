@@ -1,0 +1,2 @@
+cd /root/Documents/RTFM-scripts/CustomTools/rpivot
+python server.py --server-port 9999 --server-ip 0.0.0.0 --proxy-ip 127.0.0.1 --proxy-port 1080

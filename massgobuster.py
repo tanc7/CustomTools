@@ -7,7 +7,9 @@ def bash_fg(cmd):
     subprocess.call(cmd,shell=True,executable='/bin/bash')
     return
 def runGobuster(host,port):
-    wordlist = "/usr/share/wordlists/dirbuster/allpaths.txt"
+    wordlist = sys.argv[2]
+
+    # wordlist = "/usr/share/wordlists/dirbuster/allpaths.txt"
     output = "gobuster-{}-{}.txt".format(
         str(host),
         str(port)
@@ -33,8 +35,8 @@ def readInputFile(inputFile):
 
 def main():
     print "MassGoBuster. Automatically run gobuster against a wordlist of host,port.\r\nComing soon: Threading by running 5 gobuster processes at a time."
-    if len(sys.argv) < 2:
-        print "Usage:\r\npython massgobuster.py <list of hosts and ports separated by commas>"
+    if len(sys.argv) < 3:
+        print "Usage:\r\npython massgobuster.py <wordlist host,port> <wordlist of /paths>"
         exit(0)
     else:
         inputFile = sys.argv[1]
