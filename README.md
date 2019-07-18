@@ -11,7 +11,7 @@ Automatically run gobuster against a wordlist of ip,port on each line, useful fo
 
 Syntax:
 
-`python massgobuster.py <wordlist>`
+`python massgobuster.py <wordlist of host,ports> <wordlist of paths> <OPTIONAL: threads, default=10>`
 
 Where each line in wordlist looks like:
 

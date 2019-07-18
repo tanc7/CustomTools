@@ -1,6 +1,9 @@
-#!/usr/bin/python3
-import os, sys, operator, subprocess, threading, asyncio
+#!/usr/bin/python
+import os, sys, operator, subprocess, threading, toolkits
 
+
+
+# WARNING: Do not run mass-go-buster unless you have MORE than 16GB of RAM on your host operating system and allocated AT LEAST 8GB to your guest. Gobuster itself is VERY memory hungry. 
 # Run gobuster 5 at a time using threading and asyncio (Python3 only)
 # Work on this later, get the scanners back up
 
@@ -25,15 +28,20 @@ def bash_fg(cmd):
     subprocess.call(cmd,shell=True,executable='/bin/bash')
     return
 def runGobuster(host,port):
-    wordlist = "/usr/share/wordlists/dirbuster/allpaths.txt"
+    wordlist = sys.argv[2]
+    if len(sys.argv) < 4:
+        threads = 10
+    else:
+        threads = sys.argv[3]
     output = "gobuster-{}-{}.txt".format(
         str(host),
         str(port)
     )
-    cmd = "gobuster dir -u http://{}:{} -w {} -o {}".format(
+    cmd = "gobuster dir -u http://{}:{} -w {} -t {} -o {}".format(
         str(host),
         str(port),
         str(wordlist),
+        str(threads),
         str(output)
     )
     bash_fg(cmd)
@@ -52,7 +60,8 @@ def readInputFile(inputFile):
 def main():
     print "MassGoBuster. Automatically run gobuster against a wordlist of host,port.\r\nComing soon: Threading by running 5 gobuster processes at a time."
     if len(sys.argv) < 2:
-        print "Usage:\r\npython massgobuster.py <list of hosts and ports separated by commas>\r\nThis REQUIRES Python3 because it uses the asyncio module"
+        print toolkits.yellow("Usage:\r\npython massgobuster.py <wordlist of host,ports> <wordlist of paths> <OPTIONAL: threads, default=10>")
+        print toolkits.cyan("\r\nEXAMPLE: python massGoBuster.py targetHostPort.txt /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt 50\r\nEXAMPLE EFFECT: Runs GoBuster at a rate of 50 threads against each target,port combo found in the list of targets using the wordlist")
         exit(0)
     else:
         inputFile = sys.argv[1]
