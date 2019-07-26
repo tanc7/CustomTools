@@ -1,0 +1,6 @@
+/. (Status: 200)
+/?? (Status: 200)
+/admin (Status: 302)
+/manager (Status: 302)
+/shell (Status: 302)
+/webdav (Status: 200)

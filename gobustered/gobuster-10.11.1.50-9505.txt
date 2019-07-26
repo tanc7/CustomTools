@@ -1,0 +1,5 @@
+/. (Status: 301)
+/?? (Status: 200)
+/~ban (Status: 403)
+/~deny (Status: 403)
+/~list (Status: 200)
